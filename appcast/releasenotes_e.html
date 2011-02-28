@@ -1,0 +1,714 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>XLD release notes</title>
+<style type="text/css">
+table {display:none;}
+ul,p {font-size:9pt;}
+div#isweb-lite-common-header {display:none;}
+div#isweb-lite-adbanner {display:none;}
+iframe#AD {display:none !important;}
+iframe#FAD {display:none !important;}
+body {padding-left: 10px !important; padding-right: 10px !important; margin-left: 10px !important! margin-right: 10px !important!}
+</style>
+</head>
+
+<body>
+<!--<div style="padding: 5px; border: 5px solid; font-family:sans-serif">
+The XLD website has been moved from <a href=http://tmkk.hp.infoseek.co.jp/xld/index_e.html>http://tmkk.hp.infoseek.co.jp/xld/index_e.html</a> to <a href=http://tmkk.pv.land.to/xld/index_e.html>http://tmkk.pv.land.to/xld/index_e.html<a/>. Please update bookmarks and links. The old website is not available anymore.
+</div>
+<div style="margin: 5px; color:red; font-family:sans-serif">For those who cannot update XLD from this dialog: some "bad-mannered" app hook plugins including the old Sparkle framework (ClickToFlash, for example) conflict with Sparkle in XLD. Disable those plugins before the update.
+</div>-->
+<div style="margin: 5px; color:red; font-family:sans-serif">Please <b>do not</b> post update info on the service like MacUpdate <b>before</b> I update the official website. The version which doesn't appear in the website is a development version. It may be unstable, and not well tested.
+</div>
+
+<p><strong>Version 20110226:</a></strong></p>
+<ul>
+<li>Added support for reading cue sheet associated with multiple files (aka "noncompliant" cuesheet)</li>
+</ul>
+<p><strong>Version 20110212:</a></strong></p>
+<ul>
+<li>Added a feature to set the default value of the comment tag</li>
+<li>Added an option to choose preferred CDDB service (FreeDB vs MusicBrainz)</li>
+<li>"Refresh list" menu item has now Command-Shift-R shortcut</li>
+<li>Fixed a problem when adding a file with a specific character to iTunes database</li>
+<li>Fixed a missing AlbumGain log problem with CD-extra discs</li>
+</ul>
+<p><strong>Version 20101212:</a></strong></p>
+<ul>
+<li>Fixed an incorrect TOC detection on some drives</li>
+<li>Fixed some problems regarding the "Delete original files" option</li>
+</ul>
+<p><strong>Version 20101208:</a></strong></p>
+<ul>
+<li>Fixed a bug that AR signature in a logfile was 0 in case a disc was not found in DB</li>
+<li>Fixed a potential memory leak</li>
+</ul>
+<p><strong>Version 20101128:</a></strong></p>
+<ul>
+<li>Supported AccurateRip2 CRC</li>
+If XLD finds a match with AR2 CRC, a log says like
+<pre>
+    AccurateRip signature  : 01234567
+       ->Accurately ripped! (AR2, confidence 10)
+</pre>
+<li>Supported offset finding CRC in AR database</li>
+Now XLD uses offset finding CRC for detecting different pressings. It works better for the first and last track.
+<li>Fixed a problem that a filename format identifier %A did not work for 1-to-1 file transcoding</li>
+<li>Fixed a problem when ripping with 0 offset correction value</li>
+<li>Fixed a crash problem when read error occured</li>
+<li>Various small fixes around the ripping log</li>
+</ul>
+<p><strong>Version 20101120:</a></strong></p>
+<ul>
+<li>Supported DCP (Digital Copy Permitted) flag</li>
+<li>More robust TOC reading</li>
+<li>A bit better error correction in XLD Secure Ripper</li>
+<li>AccurateRip summary is also shown in the log of AR checker</li>
+<li>XLD doesn't show many "Not found"s in the AR summary anymore if the disc is not found in AR database</li> 
+</ul>
+<p><strong>Version 20101117:</a></strong></p>
+<ul>
+<li>Fixed a disc open failure on some drives</li>
+<li>Added AccurateRip summary section in the log</li>
+</ul>
+<p><strong>Version 20101115:</a></strong></p>
+<ul>
+<li>Introduced a new original secure ripping engine</li>
+This is a brand-new secure ripping engine employing a statistical error correction and a cache defeat. Generally it shows a better and more consistent result than the existing CDParanoia engine, especially on slightly damaged discs. At this moment it is not turned on by default, but I recommend everyone try it. Enabled by setting "Ripper Mode" option to "XLD Secure Ripper".<br>
+Here is a description of the error in the report:
+<ul>
+<li>Jitter error (maybe fixed)</li>
+Number of reads which caused a jitter error. The error occurs when seeking between sectors back and forward heavily - the drive fails to return the accurate sector position and returns a slightly moved position. Fixed by the program in most cases.
+<li>Retry sector count</li>
+Number of sectors which needed a retry read. The program performs a retry read when the 1st and the 2nd (verify) read results do not match (or when C2 error is detected). In case a statistically consistent result was found with the retry reads, this count is incremented. Not a problem in most cases.
+<li>Damaged sector count</li>
+Number of sectors in which the program was unable to find a statistically consistent result with the retry reads. Bad result in most cases.
+</ul>
+<li>Implemented a new CD ripper backed</li>
+Libcdio was used as a backend so far, but now it has been replaced with my original implementation. Many troubles like a hangup on CD-extra discs should be fixed now.
+<li>Removed a support for CDParanoia II 9.8 engine</li>
+</ul>
+
+<p><strong>Version 20101107:</a></strong></p>
+<ul>
+<li>A versatile multiple-format encoder</li>
+Now you can invoke the same encoder with different settings at the same time, like MP3 128kbps & 320kbps.
+<li>various small bugfixes</li>
+</ul>
+<p><strong>Version 20101031:</a></strong></p>
+<ul>
+<li>Fixed a missing padding byte problem in ID3 chunk in AIFF files</li>
+<li>Supported various sorting tags (for iTunes) in AAC/ALAC/MP3/FLAC/Vorbis files</li>
+</ul>
+<p><strong>Version 20101027:</a></strong></p>
+<ul>
+<li>Fixed a random error when decoding multiple ALAC files</li>
+<li>Fixed a problem that a year tag is not correctly updated by the tag editor in some cases</li>
+</ul>
+<p><strong>Version 20101023:</a></strong></p>
+<ul>
+<li>Fixed a problem that pregap detection did not work on 10.5 PPC(?) machines with a certain drive</li>
+<li>Fixed an issue with ALAC decoder on PPC machines</li>
+<li>Increased a maximum number of threads to 32</li>
+<li>Supported a lyrics tag in mp3 encoder</li>
+<li>Supported a grouping tag in FLAC/Vorbis</li>
+<li>Updated a drive offset database</li>
+<li>Added Italian localization</li>
+</ul>
+<p><strong>Version 20101010:</a></strong></p>
+<ul>
+<li>Fixed a problem that prevented from launching on PPC G3 Macs</li>
+<li>Fixed a problem that "Don't prompt if multiple candidates are found" option was only working for automated CD ripping</li> 
+<li>Proxy setting is now applied to the musicbrainz connection</li>
+</ul>
+<p><strong>Version 20100926:</a></strong></p>
+<ul>
+<li>Added an option to delete original files after conversion</li>
+Use carefully. Only works with 1-to-1 conversion.
+<li>Improved cue sheet parser/writer</li>
+<li>Supported writing BPM and part of a gapless album tags in AIFF files</li>
+<li>Supported writing a BPM tag in MP3 files</li>
+</ul>
+<p><strong>Version 20100918:</a></strong></p>
+<ul>
+<li>Supported writing comment lines in a cue sheet</li>
+<li>Improved a cue sheet detection routine</li>
+<li>Improved a file extensionin handling in the save dialog</li>
+<li>Visibility of the preference panel is saved</li>
+<li>Preference panel opens at the initial launch</li>
+</ul>
+<p><strong>Version 20100911:</a></strong></p>
+<ul>
+<li>Added a feature to import tags from a text list</li>
+Now you can automatically fill metadata by using a formatted text list. Try File->Import Tags from a Text menu.
+<li>Added an option to keep the original time stamp when transcoding</li>
+Available in the metadata tab. Only works with 1-to-1 conversion.
+<li>Delete incomplete files when cancelled or error occured</li>
+<li>Fixed a problem with ape files including invalid (null-terminated) text tags</li>
+</ul>
+<p><strong>Version 20100908:</a></strong></p>
+<ul>
+<li>Fixed corrupted resources on some languages</li>
+</ul>
+<p><strong>Version 20100907:</a></strong></p>
+<ul>
+<li>Phase 1: Changed the main build environment to Xcode 3.2, and converted .nib to .xib</li>
+OSX 10.3.9 won't be supported anymore. Maybe still it works, though.
+<li>Metadata editor window for the converter is now modeless</li>
+You can access the prefs or open files while editing.
+<li>Added "Set image" context menu to the album art view</li>
+<li>Added a switch to control the TLEN tag in the LAME output plugin</li>
+</ul>
+<p><strong>Version 20100904:</a></strong></p>
+<ul>
+<li>Supported genre (%g) in the format of filename field</li>
+<li>Supported reading/writing copyright and part of a gapless album tags in AAC/ALAC files</li>
+</ul>
+<p><strong>Version 20100828:</a></strong></p>
+<ul>
+<li>Added "Force mono encoding" option in AAC encoder</li>
+<li>Supported reading/writing BPM tag in AAC/ALAC files</li>
+<li>Fixed a minor glitch in the rip log formatting</li>
+Due to the breakdown of my MacBook Pro, I couldn't devote the past month to the development... And I'm finally back now. I'm now thinking that I'd drop support for older OSXes to improve the user experience. Any comments are welcome.
+</ul>
+<p><strong>Version 20100711:</a></strong></p>
+<ul>
+<li>Improved a compatibility of ALAC encoder</li>
+Some unofficial ALAC decoders cannot play ALAC files created by XLD due to the wrong stream info (which should be ignored by correctly implemented decoders, though) written by the CoreAudio encoder. Now XLD forcibly updates the info after encoding.
+</ul>
+<p><strong>Version 20100704:</a></strong></p>
+<ul>
+<li>Added information about the gap status in the ripping log</li>
+<li>Fixed a bug that "Apply This Item for All Files" context menu didn't work correctly</li>
+<li>Fixed a minor issue regarding the progress window</li>
+</ul>
+<p><strong>Version 20100518:</a></strong></p>
+<ul>
+<li>Fixed a problem when encoding with multiple format and skip existing file option</li>
+<li>Updated german translation</li>
+</ul>
+<p><strong>Version 20100516:</a></strong></p>
+<ul>
+<li>Supported reading/writing disc number info in the cue sheet</li>
+<li>Supported reading/writing total disc number info in the cue sheet</li>
+<li>Supported reading/writing FreeDB DiscID info in the cue sheet</li>
+<li>Supported FreeDB DiscID (%I) in the format of filename field</li>
+<li>Automatic update is now deactivated while active task exists, because it interrupt the task</li>
+<li>Fixed a problem that some files with embedded cuesheet was not recognized in the batch mode</li>
+</ul>
+<p><strong>Version 20100515:</a></strong></p>
+<ul>
+<li>XLD now recognizes MARK chunk in AIFF as a track separator</li>
+<li>Supported ISRC (%i) and MCN (%m) in the format of filename field</li>
+<li>Supported writing ISRC tag to mp3 files</li>
+</ul>
+<p><strong>Version 20100511:</a></strong></p>
+<ul>
+<li>Fixed a bug when choosing "Apply This Item for All Files" context menu for cover art in the tag editor</li>
+</ul>
+<p><strong>Version 20100505:</a></strong></p>
+<ul>
+<li>Fixed a problem that the format string %A was not replaced correctly in the batch conversion mode</li>
+</ul>
+<p><strong>Version 20100503:</a></strong></p>
+<ul>
+<li>Supported external .cue in the batch conversion mode</li>
+Audio data should be associated with FILE line in the cue sheet.
+<li>Format of filename field now can be used for single/batch file conversions</li>
+<li>Added "Apply This Item for the Same Album" context menu in tag editor (for "Edit tags before convert")</li>
+</ul>
+<p><strong>Version 20100424:</a></strong></p>
+<ul>
+<li>Added a ripping mode that doesn't include the track 1 pregap (aka HTOA), but includes all remaining pregaps</li>
+<li>Added an option to choose the bit depth of linear PCM (Wav/AIFF/Wave64) output</li>
+Note that the option is shared between the all 5 linear PCM outputs.
+</ul>
+<p><strong>Version 20100417:</a></strong></p>
+<ul>
+<li>Fixed a problem that the track info for CD-extra discs wasn't imported from iTunes</li>
+</ul>
+<p><strong>Version 20100412:</a></strong></p>
+<ul>
+<li>Added an option to preserve unknown metadata when transcoding
+Works for the conversion between FLAC, WavPack and Vorbis. This is enabled by default, but you can turn it off if you feel annoying.
+</ul>
+<p><strong>Version 20100409:</a></strong></p>
+<ul>
+<li>Added an option to enable/disable the autoset compilation flag functionality</li>
+<li>XLD no longer sets the compilation flag automatically if album artist tag exists</li>
+<li>Fixed a problem that the compilation flag had higher priority than the album artist tag for the replacement of %A</li>
+<li>Fixed a problem that the album artist info was incorrectly removed in some cases when reading cue sheets</li>
+</ul>
+<p><strong>Version 20100401:</a></strong></p>
+<ul>
+<li>Improved CD Info.cidb importer</li>
+<li>Updated the drive offset list</li>
+</ul>
+<p><strong>Version 20100323:</a></strong></p>
+<ul>
+<li>Updated LAME to version 3.98.4</li>
+There was a serious bug in LAME 3.98.3. I strongly recommend you to re-encode the files encoded with 3.98.3 (especially in high bitrate CBR settings).
+</ul>
+<p><strong>Version 20100302:</a></strong></p>
+<ul>
+<li>Relaxed a size limitation of the embedded image in LAME encoder</li>
+<li>Supported composer (%c) in the format of filename field</li>
+</ul>
+<p><strong>Version 20100301:</a></strong></p>
+<ul>
+<li>Updated LAME to version 3.98.3</li>
+<li>Fixed an incorrect AR hash calculation for the last audio track of CD-extra discs</li>
+</ul>
+<p><strong>Version 20100218:</a></strong></p>
+<ul>
+<li>Fixed again the duration problem of HE-AAC files</li>
+</ul>
+<p><strong>Version 20100217:</a></strong></p>
+<ul>
+<li>Enabled HE-AAC encoder on OSX 10.5</li>
+Introduced a hack :p
+<li>Assigned cmd-D for the decode button</li>
+</ul>
+<p><strong>Version 20100214:</a></strong></p>
+<ul>
+<li>Added an experimental support for TAK decoder (intel only)</li>
+Now XLD provides TAK decoder powered by <a href=http://www.winehq.org/>Wine</a>. <b>You should install and configure Wine correctly to use the plugin (wine command should be in $PATH of your login shell).</b><br>
+Technical topic: The TAK plugin is composed of 2 parts, a backend winelib app and a frontend Cocoa plugin. The backend loads TAK DLL and calls TAK API using the Wine technology, and the frontend interacts with the backend using IPC. This way we can transparently access the TAK DLL as if it were natively supported on OSX.
+</ul>
+<p><strong>Version 20100209:</a></strong></p>
+<ul>
+<li>Added option to move converted files to the destination folder after finish</li>
+This is useful when saving to iTunes watch folder.
+<li>SSE optimized decoder routine for older APE files</li>
+</ul>
+<p><strong>Version 20100206:</a></strong></p>
+<ul>
+<li>Added compatibility with older ape files</li>
+</ul>
+<p><strong>Version 20100205:</a></strong></p>
+<ul>
+<li>Fixed a problem that the radio button for "Format of filename" option didn't work</li>
+</ul>
+<p><strong>Version 20100123:</a></strong></p>
+<ul>
+<li>Updated libsndfile to version 1.0.21</li>
+</ul>
+<p><strong>Version 20100117:</a></strong></p>
+<ul>
+<li>Fixed again the way to calcurate AR discID for CD-extra discs</li>
+</ul>
+<p><strong>Version 20091230:</a></strong></p>
+<ul>
+<li>Added the option to skip detecting pregap</li>
+<li>Format string for the album artist (%A) is now replaced with "Compilations" when the compilation flag is set</li>
+<li>Fixed a hangup when reading ogg vorbis files</li>
+</ul>
+<p><strong>Version 20091225:</a></strong></p>
+<ul>
+<li>Fixed a bug that AR query failed when "Save as a single file" option was selected</li>
+</ul>
+<p><strong>Version 20091223:</a></strong></p>
+<ul>
+<li>Supported detecting pregap length longer than 10 seconds</li>
+<li>Added support for "SONGWRITER" command as the composer info in cue sheets</li>
+<li>Pre-gap length is shown in the ripping log</li>
+<li>Checkboxes in the track list window accept modifier key</li>
+Shift-click checks/unchecks all tracks, command-click checks/unchecks selected tracks.
+</ul>
+<p><strong>Version 20091212:</a></strong></p>
+<ul>
+<li>Fixed a CDDB and AR query issue in CD-extra discs</li>
+<li>Updated WavPack library to version 4.60.1</li>
+</ul>
+<p><strong>Version 20091202:</a></strong></p>
+<ul>
+<li>Fixed a crash when disable embedding cover images</li>
+<li>Fixed an invalid duration time issue in Apple HE-AAC encoder</li>
+</ul>
+<p><strong>Version 20091129:</a></strong></p>
+<ul>
+<li>Added an option to set file type to 'OggS' in FLAC encoder (checked by default)
+For the compatibility with FLACImport.component.
+<li>AccurateRip checker now checks offset for the last track</li>
+</ul>
+<p><strong>Version 20091127:</a></strong></p>
+<ul>
+<li>AccurateRip checker now shows the result with alternate offset candidates</lI>
+<li>NSToolbar based preference pane</lI>
+</ul>
+<p><strong>Version 20091125:</a></strong></p>
+<ul>
+<li>Fixed a problem that Shorten decoder hung on the large file which is unable to decode</lI>
+</ul>
+<p><strong>Version 20091123:</a></strong></p>
+<ul>
+<li>Added an experimental support for Shorten (decoding only)</li>
+</ul>
+<p><strong>Version 20091121:</a></strong></p>
+<ul>
+<li>Fixed a problem when reading defined but empty metadata in ALAC files</li>
+</ul>
+<p><strong>Version 20091115:</a></strong></p>
+<ul>
+<li>Fixed a problem when handling cuesheet (or disc) which has only one track with pregap</li>
+<li>Fixed a filename issue in the cue sheet for separated files</li>
+<li>Added option to control embedding album art</li>
+</ul>
+<p><strong>Version 20091114:</a></strong></p>
+<ul>
+<li>Fixed a prblem that the duration of AAC file is not properly shown in iTunes in case the file is resampled by encoder</li>
+<li>Added an option to prevent XLD from overwriting already embedded images</li>
+<li>Fixed a bug that "Load following files in the same folder as cover art" checkbox is ignored in batch coversion</li>
+</ul>
+<p><strong>Version 20091112:</a></strong></p>
+<ul>
+<li>Fixed a problem that the state of "Cover Art" item in the "Query Items" submenu was not saved properly</li>
+<li>Batch conversion now ignores invisible files (like .DS_Store) when scanning directory</li>
+</ul>
+<p><strong>Version 20091111:</a></strong></p>
+<ul>
+<li>Added option to load a specific file automatically as a cover art</li>
+<li>Added option to scale embedded images smaller than the target size</li>
+</ul>
+<p><strong>Version 20091108:</a></strong></p>
+<ul>
+<li>Supported pre-emphasis flag</li>
+<li>Supported disk number (%D) in the filename field</li>
+Note: descriptions are now shown in tooltip.
+<li>Changed the default value of VBR quality for AAC encoder in QT 7.6.3 or later</li>
+<li>Fixed an odd behavior of automount feature</li>
+</ul>
+<p><strong>Version 20091107:</a></strong></p>
+<ul>
+<li>Added an option to quit XLD after ripping</li>
+<li>Added support for grouping tag in ALAC decoder</li>
+<li>FLAC decoder now supports reading embedded pictures not marked as "Cover (front)"</li>
+<li>Fixed a problem when creating a file with too long filename</li>
+<li>Fixed an m4a incompatibility issue with some software</li>
+Some software (squeezebox?) with incomplete atom parsing ability can't read m4a files create by XLD on 10.6. This is a fault of these software, but anyway I took an action in my side.
+</ul>
+<p><strong>Version 20090930:</strong></p>
+<ul>
+<li>Updated WavPack library to version 4.60</li>
+<li>Added Russian localization</li>
+</ul>
+<p><strong>Version 20090924:</strong></p>
+<ul>
+<li>Fixed a problem of ALAC metadata reader on Snow Leopard</li>
+<li>Fixed a problem that autoloading disc was not working on Snow Leopard</li>
+</ul>
+<p><strong>Version 20090922:</strong></p>
+<ul>
+<li>XLD now accepts cover arts dragged from web browsers</li>
+<li>Interactive bitrate indicator for AAC ture VBR encoder</li>
+</ul>
+<p><strong>Version 20090910:</strong></p>
+<ul>
+<li>Fixed a bitrate indicator in AAC encoder for true VBR with QT 7.6.4 </li>
+Unfortunately HE-AAC encoder is not available via CoreAudio (nor QT Player) in 10.5; it's only accessible from iTunes now.
+</ul>
+<p><strong>Version 20090829:</strong></p>
+<ul>
+<li>Fixed a problem when reading ISRC tag in FLAC files</li>
+</ul>
+<p><strong>Version 20090828:</strong></p>
+<ul>
+<li>Updated Simplified Chinese resources</li>
+</ul>
+<p><strong>Version 20090827a:</strong></p>
+<ul>
+<li>Supported the new HE-AAC encoder in Snow Leopard</li>
+To use, check "Encode with HE-AAC" checkbox in the option dialog of MPEG-4 AAC encoder. In HE-AAC encoder, true VBR is not available and available bitrate is limited (24-80kbps).
+</ul>
+<p><strong>Version 20090827:</strong></p>
+<ul>
+<li>Fixed a small problem in CD info.cidb parser</li>
+<li>Updated internal drive offset database</li>
+</ul>
+<p><strong>Version 20090824a:</strong></p>
+<ul>
+<li>Fixed a bug in CD Info.cidb parser</li>
+</ul>
+<p><strong>Version 20090824:</strong></p>
+<ul>
+<li>Fixed incompatibility of AAC/ALAC encoder with Snow Leopard</li>
+<li>More intelligent CD Info.cidb parser</li>
+<li>Fixed failure of exporting to iTunes when filename contains backslash</li>
+<li>XLD is now able to skip processing when the file with the same name exists</li>
+<li>Supported comment line in cue sheets</li>
+<li>New document icon</li>
+</ul>
+<p><strong>Version 20090320:</strong></p>
+<ul>
+<li>Fixed a problem that a png image embedded with iTunes wasn't read</li>
+</ul>
+<p><strong>Version 20090318:</strong></p>
+<ul>
+<li>Supported reading ISRC</li>
+<li>Improved stability when connecting MusicBrainz server</li>
+<li>Fixed an offset calculation in DDPMS files</li>
+</ul>
+<p><strong>Version 20090317:</strong></p>
+<ul>
+<li>Improved a DDP support</li>
+<li>Fixed a problem that Monkey's audio decoder sometimes wrongly detected files</li>
+<li>XLD now shows a dialog when quitting with active tasks</li>
+</ul>
+<p><strong>Version 20090315a:</strong></p>
+<ul>
+<li>Fixed a problem when embedding a large album art into AAC/ALAC files</li>
+</ul>
+<p><strong>Version 20090315:</strong></p>
+<ul>
+<li>Fixed a problem that BOM option was not applied in a certain situation</li>
+</ul>
+<p><strong>Version 20090314:</strong></p>
+<ul>
+<li>Added support for DDP (Disc Description Protocol) files</li>
+"DDPMS" files can be opened as a cue sheet.
+<li>Relaxed the limitation of the size of album arts embedded into MP3 files</li>
+<li>Improved support for FLAC metadata (ALBUMARTIST/TRACKTOTAL/DISCTOTAL/COMPILATION)</li>
+<li>Now %y (year) can be used as a filename format indicator</li>
+<li>Added option to control appending BOM to cue sheets</li>
+<li>Added option to force mono encoding in LAME encoder</li>
+<li>Improved reliability of CD Info.cidb parser</li>
+<li>Updated libcdio library</li>
+<li>Updated libsndfile library</li>
+</ul>
+<p><strong>Version 20090217:</strong></p>
+<ul>
+<li>Fixed a problem that colon(:) in the folder name was not replaced with the safe one</li>
+</ul>
+<p><strong>Version 20090216:</strong></p>
+<ul>
+<li>Added "Apply This Item for All Files" context menu in tag editor (for "Edit tags before convert")</li>
+<li>Added option for batch conversion to split file with embedded cue sheet automatically</li>
+</ul>
+<p><strong><a href=xld-gui-20090215.tbz>Version 20090215:</a></strong></p>
+<ul>
+<strong><font color=red>IMPORTANT: You must update to this version to receive further update notifications.</font></strong>
+<li>Supported folder conversion</li>
+XLD now accepts folder! There is an option to preserve the whole directory structures, and to control the depth of subfolder to read in preferences.
+<li>Added option to open, query,  and eject CD automatically</li>
+XLD now recognizes disc insertion and allows you to start ripping without any manual operations. If you choose XLD as an preferred application for audio CDs in system preferences, XLD works as iTunes.
+<li>Renovated the behavior of progress window</li>
+You can convert thousands of files without slowdown.
+<li>Supported writing metadata for AIFF files</li>
+XLD now writes iTunes-compatible tags against AIFF files.
+<li>Added option to control samplerate in some output plugins</li>
+<li>Updated LAME output plugin to make id3 tags to be written in little-endian format</li>
+Because some softwares in windows doesn't support big-endian tags (sucks!).
+<li>Supported compilation tag</li>
+<li>Improved Gracenote (iTunes) CDDB file importer</li>
+Now per-track artist, composer, comment, etc. are recognized.
+<li>Updated Sparkle.framework</li>
+<li>Added Dutch translation (thanks to Jesse Muller)</li>
+<li>Various fixes and improvements</li>
+</ul>
+<p><strong>Version 20080926:</strong></p>
+<ul>
+<li>Fixed a bug in AAC/ALAC encoding without metadata addition</li>
+</ul>
+<p><strong>Version 20080925:</strong></p>
+<ul>
+<li>Fixed a log filename issue</li>
+<li>XLD now always saves a logfile in the same directory as ripped files</li>
+</ul>
+<p><strong>Version 20080924:</strong></p>
+<ul>
+<li>Fixed a problem that produced endian-swapped audio files on PPC machine when using C2 pointers</li>
+<li>Updated LAME to version 3.98.2</li>
+</ul>
+<p><strong>Version 20080921a:</strong></p>
+<ul>
+<li>Added option to use C2 error pointers</li>
+When the option is turned on, XLD first read a sector in burst mode, and check the occurrence of C2 error. If C2 error occurs, then XLD re-read the sector with cdparanoia. This accelerates ripping extremely for the drive with C2 error support (Plextor, NEC, etc), without losing safety. If you use this option, please make sure that your drive supports reporting C2 errors.
+<li>Modified wavpack encoder to store MD5 checksum by default</li>
+<li>Added option to prevent XLD from setting offset correction value automatically</li>
+</ul>
+<p><strong>Version 20080921:</strong></p>
+<ul>
+<li>Fixed some issues with the new cdparanoia engine</li>
+<li>Fixed a problem when ripping Mixed Mode CD/Enhanced CD</li>
+<li>Removed redundancy of the cue sheet generated by XLD</li>
+<li>Offset correction value is now set automatically when opening a CD, if available</li>
+</ul>
+<p><strong>Version 20080919:</strong></p>
+<ul>
+<li>Removed all options regarding cache</li>
+Now the default setting is the "strongest" one in the previous version (the same as cdparanoia 10.2 default). I'll remove the old engine if there is no problem with this version.
+<li>Integrated drive offset database into application</li>
+You can select the offset correction value for your drive if it is registered in the database.
+</ul>
+<p><strong>Version 20080916c:</strong></p>
+<ul>
+<li>Changed log style to show the new AR hash with the corrected offset</li>
+<b>Please don't be nervous too much about this; it's just an issue of the displaying style. The offset detection algorithm itself isn't changed at all from the beginning.</b>
+</ul>
+<p><strong>Version 20080916b:</strong></p>
+<ul>
+<li>Fixed AR checking issue of Apple Lossless files</li>
+<li>Changed a message in caching ability measurement result, to stop recommending to turn off "Disable Cache" option</li>
+Judging from my several experiments, turning off "disable cache" option is not recommended with CDParanoia III 10.2 engine, even if the detected cache size is too small. This tends to generate inconsistent results. Turning "Disable Cache" option on with the minimum strength is recommended for most drives with no cache.
+</ul>
+<p><strong>Version 20080916a:</strong></p>
+<ul>
+<li>Fixed a problem that showed invalid "You can turn off Disable Cache option" message on some drives, after measuring caching ability</li>
+</ul>
+<p><strong>Version 20080916:</strong></p>
+<ul>
+<li>Supported simultaneous codec conversion</li>
+Select "Multiple Formats" in the output format and check the preferred format in the option. Note that WAV, AIFF, PCM and WAVE64 is exclusive each other.
+<li>XLD now recognizes '/' (slash) as a directory separator in the filename format field</li>
+XLD creates folder automatically. You can save files in the preferred folder by its title, artist, etc.
+<li>Supported album artist (%A) and format name (%f) in the filename field</li>
+<li>Added option to disable embedding cue sheet in FLAC and WavPack encoder</li>
+<li>Integrated drive caching ability measurement routine of CDParanoia III 10.2</li>
+To measure, open a CD and choose "Measure Drive Cache Ability" in File menu.
+<li>Improved sample length detection routine of Apple Lossless decoder</li>
+</ul>
+<p><strong><a href=xld-gui-20080914.tbz>Version 20080914a:</a></strong></p>
+<ul>
+<li>Fixed a problem that showed meaningless offset correction values when a disc does not present in AccurateRip database</li>
+</ul>
+<p><strong>Version 20080914:</strong></p>
+<ul>
+<li>Added feature to scan ReplayGain</li>
+You can use this feature by choosing "Scan ReplayGain" in File menu
+<li>Added option to scan ReplayGain during ripping</li>
+The result is displayed in log and written in cue sheet.
+<li>Added option to set the strength of the cache defeating ability</li>
+Stronger is safer, but slower. Stronger setting will be useful for the drive which has a large cache.
+<li>Changed again the deffault caching behavior</li>
+Now the default is "Disable cache: ON" and "Strength of cache defeating ability: weakest". 
+<li>Added option to switch engine between the new cdparanoia engin and the old one</li>
+<li>Changed log messaging style to report the track which matches AccurateRip DB with the different offset as "Accurately ripped" track</li>
+<li>REM DATE and REM GENRE line for the cue sheet is now written in the common section</li>
+<li>Fixed a problem that disable cache setting is not applied to the test run</li>
+<li>Fixed an invalid TLEN tag issue in LAME encoder</li>
+</ul>
+<p><strong>Version 20080913:</strong></p>
+<ul>
+<li>Integrated cdparanoia-III 10.2 engine</li>
+Now the meaning of "Disable cache" checkbox has changed :
+<ul>
+<li>Off: Default. Faster and recommended for the drive with no audio cache.</li>
+<li>On: Disable cache using the same way as cdparanoia-III 10.2 does. Very slow, but useful for the drive with audio cache.</li>
+</ul>
+<li>Added "Check all items" and "Uncheck all items" in the context menu of the track list</li>
+</ul>
+<p><strong>Version 20080912:</strong></p>
+<ul>
+<li>Automatic album art downloading feature now can be disabled from CDDB menu</li>
+<li>Added option to modify a size of padding section in FLAC encoder</li>
+<li>Added save button in Log window</li>
+<li>Modified log format to show not only relative values but also absolute values for a real-time offset checking result</li>
+Absolute values can be used for the drive offset, and relative values can be used for fixing offset of existing files.
+<li>A real-time offset checking feature now can be used for the first and the last track</li>
+Note that detection will fail if the first or last 5 sectors contain non-zero samples.
+</ul>
+<p><strong>Version 20080911:</strong></p>
+<ul>
+<li>Fixed a problem of ALAC decoding with QuickTime 7.5.5</li>
+</ul>
+<p><strong>Version 20080910:</strong></p>
+<ul>
+<li>Fixed a problem for reading an enhanced CD (CD-extra)</li>
+</ul>
+<p><strong>Version 20080909:</strong></p>
+<ul>
+<li>Fixed an endian-swapping issue on some environments and CDs</li>
+</ul>
+<p><strong>Version 20080908:</strong></p>
+<ul>
+<li>Implemented a feature to check offset in the ripping stage</li>
+Now XLD performs a real-time offset checking while ripping, when the CD is available in AccurateRip DB. The result is written in the log if found. Note that this feature is not available for the first and the last track.
+</ul>
+<p><strong>Version 20080907a:</strong></p>
+<ul>
+<li>Improved performance of offset detection</li>
+<li>Supported displaying all candidates for the offset correction value</li>
+</ul>
+<p><strong>Version 20080907:</strong></p>
+<ul>
+<li>Added feature to fix a wrong offset of the existing files using AccurateRip database</li>
+You can detect and fix an offset from "Detect Offset" and "Save with Offset Correction..." in File menu, after opening a file (with cuesheet) that you want to fix. 
+<li>Separated drift errors from skip errors in cdparanoia statistics</li>
+<li>Added option to treat AccurateRip mismatch as an inconsistency in log</li>
+<li>Modified loading method of Sparkle.framework to support OSX 10.3</li>
+</ul>
+<p><strong>Version 20080906:</strong></p>
+<ul>
+<li>Sorted character encoding pop-up menu by alphabetical order</li>
+</ul>
+<p><strong>Version 20080905:</strong></p>
+<ul>
+<li>XLD now shows "[AR]" string in the titlebar of the window when a disc is available in AccurateRip DB</li>
+</ul>
+<p><strong>Version 20080904:</strong></p>
+<ul>
+<li>Added option to avoid testing when the track exists in AccurrateRip DB</li>
+<li>Supported creating a cue sheet for separated track files</li>
+You can choose type in the save dialog. Note that currently XLD can't read this type of cue sheet.
+</ul>
+<p><strong>Version 20080902:</strong></p>
+<ul>
+<li>Fixed a problem in ALAC decoder</li>
+</ul>
+<p><strong>Version 20080830:</strong></p>
+<ul>
+<li>Added option to test before copy</li>
+</ul>
+<p><strong>Version 20080829:</strong></p>
+<ul>
+<li>Added option to veryfy suspicious sectors</li>
+</ul>
+<p><strong>Version 20080828:</strong></p>
+<ul>
+<li>Added option to save a log file automatically</li>
+<li>Improved progress view to show a speed and remaining time</li>
+</ul>
+<p><strong>Version 20080827:</strong></p>
+<ul>
+<li>XLD now automatically recognizes inserted/ejected CD</li>
+<li>Supported embedding album art in WavPack encoder</li>
+<li>Fixed to ask output directory if the default directory is not writable</li>
+</ul>
+<p><strong>Version 20080826:</strong></p>
+<ul>
+<li>Fixed to report correctly in case AccurateRip doesn't have informations for all tracks</li>
+</ul>
+<p><strong>Version 20080825:</strong></p>
+<ul>
+<li>Fixed several bugs in cdparanoia routine according to the latest release</li>
+<li>Fixed UTF-8 NFD issue when looking up Gracenote database</li>
+<li>Fixed MusicBrainz query failure on PPC Mac</li>
+</ul>
+<p><strong>Version 20080824:</strong></p>
+<ul>
+<li>Fixed a problem that XLD sometimes failed to find a CD in AccurateRip database</li>
+</ul>
+<p><strong>Version 20080823:</strong></p>
+<ul>
+<li>Added feature to calculate an AccurateRip hash for the existing files</li>
+Choose "Check file with AccurateRip" from the File menu.
+<li>Fixed again an AccurateRip hash calculation for the first track</li>
+Sorry for confusion... I hope this will be the solution...
+</ul>
+<p><strong>Version 20080822a:</strong></p>
+<ul>
+<li>Fixed an AccurateRip hash calculation for the first track with pregap</li>
+</ul>
+<p><strong>Version 20080822:</strong></p>
+<ul>
+<li>Fixed an AccurateRip hash calculation for the first and last track</li>
+<li>Improved tag editor</li>
+<li>Supported automatic update using <a href=http://sparkle.andymatuschak.org/>Sparkle</a></li>
+</ul>
+
+</body>
+
+
+</html>

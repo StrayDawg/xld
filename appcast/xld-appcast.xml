@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>XLD's Changelog</title>
+      <link>http://xld.googlecode.com/files/xld-appcast2.xml</link>
+      <description>Most recent changes with links to updates.</description>
+      <language>ja</language>
+         <item>
+            <title>バージョン 20110226</title>
+						<sparkle:releaseNotesLink>
+							http://xld.googlecode.com/svn/appcast/releasenotes.html
+						</sparkle:releaseNotesLink>
+            <pubDate>Sat, 26 Feb 2011 12:25:00 +0900</pubDate>
+            <enclosure url="http://xld.googlecode.com/files/xld-gui-20110226.tar.bz2" sparkle:version="128.1" sparkle:shortVersionString="20110226" sparkle:dsaSignature="MC0CFFd5EAbRMhpua9lDhgOseTlBgN6NAhUAgPdb3y36OHGJaxHLb9Wxx1WITtU=" length="7451922" type="application/octet-stream"/>
+         </item>
+   </channel>
+</rss>
