@@ -6,12 +6,12 @@
       <description>Most recent changes with links to updates.</description>
       <language>ja</language>
          <item>
-            <title>バージョン 20110228</title>
+            <title>バージョン 20110312</title>
 						<sparkle:releaseNotesLink>
 							http://xld.googlecode.com/svn/appcast/releasenotes.html
 						</sparkle:releaseNotesLink>
-            <pubDate>Mon, 28 Feb 2011 20:50:00 +0900</pubDate>
-            <enclosure url="http://xld.googlecode.com/files/xld-gui-20110228.tar.bz2" sparkle:version="129.0" sparkle:shortVersionString="20110228" sparkle:dsaSignature="MCwCFBjfkbLI4XFEMOF6URwb1OUURF8DAhRZ/GUsAG7m1QoAFOw2wJV8BHS3cQ==" length="7503198" type="application/octet-stream"/>
+            <pubDate>Sun, 13 Mar 2011 01:00:00 +0900</pubDate>
+            <enclosure url="http://xld.googlecode.com/files/xld-gui-20110312.tar.bz2" sparkle:version="130.0" sparkle:shortVersionString="20110312" sparkle:dsaSignature="MC0CFQCw/moQJPjKVjmbLmjp4jNYUS++cwIUbjus9SrOrzg1PS9CK2/TZUfYxL0=" length="7762082" type="application/octet-stream"/>
          </item>
    </channel>
 </rss>
