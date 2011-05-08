@@ -25,6 +25,31 @@ body {padding-left: 10px !important; padding-right: 10px !important; margin-left
 <div style="margin: 5px; color:red; font-family:sans-serif">
 このダイアログからのアップデートに失敗する場合: 古いSparkleフレームワークを含む「行儀の悪い」アプリケーションフックプラグイン (例えばClickToFlash) はXLDのSparkleとコンフリクトします。無効にしてからアップデートしてください。
 </div>-->
+<p><strong>バージョン 20110508:</a></strong></p>
+<p>
+これはCD書き込み機能のための<b>ベータ</b>リリースです。機能に興味がない場合は特にアップデートする必要はありません。</p>
+<p>
+トラックリストウインドウのツールバーにある"CDを作成"ボタンをクリックするとCD書き込み機能を利用できます。Apple標準のCD書き込みGUIが表示され、CDに書きこむことができます。</p>
+<p>
+書き込み後に検証を行う場合、環境設定で読み/書きのオフセット値が正しく設定されている必要があります。そうでないと書き込みデータとの一致が確認できず、正しい検証を行うことができません。もし書き込みオフセットが不明の場合、AccurateRipで検証可能なイメージを一旦オフセット0で書き込み、出来たディスクを正しいオフセット値で読み込みます。AccurateRipのログで推奨されるオフセット値が表示されるはずなので、相対値 (relative) の方が書き込みオフセットに相当する値です。</p>
+<p>
+書き込み機能の現在の状況は以下の通りです。</p>
+<ul>
+<li><b>できること</b>
+<ul>
+<li>flac/ape/wv/etc+cue等のイメージからCDに直接書きこみ
+<li>書き込みオフセットの考慮
+<li>プリギャップ長の再現 (HTOAを含む)
+<li>ISRC/MCNの反映
+<li>プリエンファシス/DCPフラグの設定
+</ul>
+<li>(現時点で) <b>できないこと</b>
+<ul>
+<li>Mixed Mode CDの作成
+<li>Enhanced CD (CD-Extra) の作成
+<li>CD-Textの書き込み
+</ul>
+</ul>
 
 <p><strong>バージョン 20110502:</a></strong></p>
 <ul>

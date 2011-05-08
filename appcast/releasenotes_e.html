@@ -28,6 +28,32 @@ The XLD website has been moved from <a href=http://tmkk.hp.infoseek.co.jp/xld/in
 <div style="margin: 5px; color:red; font-family:sans-serif">Please <b>do not</b> post update info on the service like MacUpdate <b>before</b> I update the official website. The version which doesn't appear in the website is a development version. It may be unstable, and not well tested.
 </div>-->
 
+<p><strong>Version 20110508:</a></strong></p>
+<p>
+This is a <b>BETA</b> release for a CD burn feature. You can skip this update unless you are interested in the feature. Feedback is welcome.</p>
+<p>
+Clicking "Burn CD" button in the toolbar of the track list window triggers a CD burner. Apple's standard CD burner GUI will appear and proceed.</p>
+<p>
+Note that the verification process requires an offset correction, so both read/write offset value (in CD Burn pref) should be set correctly for the exact match. Otherwise the verification will fail. If you are not sure about the write offset of your drive, burn AccurateRip verifiable image with the write offset 0, and rip the burned disc with the correct read offset. Then, the AR report will suggest offset values, and the relative one will be the write offset.</p>
+<p>
+Here is a current status list of the XLD burner:</p>
+<ul>
+<li>XLD <b>does</b>
+<ul>
+<li>write flac/ape/wv/etc+cue image to CD directly
+<li>take care of write offset
+<li>reproduce pregap length (including HTOA)
+<li>write ISRC/MCN
+<li>write pre-emphasis/DCP flag
+</ul>
+<li>XLD <b>does not</b> (at this moment)
+<ul>
+<li>create Mixed Mode CD
+<li>create Enhanced CD (CD-Extra)
+<li>write CD-Text
+</ul>
+</ul>
+
 <p><strong>Version 20110502:</a></strong></p>
 <ul>
 <li>Added a feature to open folder as a disc</li>
