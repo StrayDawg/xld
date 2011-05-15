@@ -25,6 +25,13 @@ body {padding-left: 10px !important; padding-right: 10px !important; margin-left
 <div style="margin: 5px; color:red; font-family:sans-serif">
 このダイアログからのアップデートに失敗する場合: 古いSparkleフレームワークを含む「行儀の悪い」アプリケーションフックプラグイン (例えばClickToFlash) はXLDのSparkleとコンフリクトします。無効にしてからアップデートしてください。
 </div>-->
+
+<p><strong>バージョン 20110515:</a></strong></p>
+<ul>
+<li>MusicBrainzからのメタデータが正常に取得できない問題を修正</li>
+<li>最近使った項目を開く メニューが機能するように</li>
+</ul>
+
 <p><strong>バージョン 20110508:</a></strong></p>
 <p>
 これはCD書き込み機能のための<b>ベータ</b>リリースです。機能に興味がない場合は特にアップデートする必要はありません。</p>
@@ -39,12 +46,14 @@ body {padding-left: 10px !important; padding-right: 10px !important; margin-left
 <ul>
 <li>flac/ape/wv/etc+cue等のイメージからCDに直接書きこみ
 <li>書き込みオフセットの考慮
-<li>プリギャップ長の再現 (HTOAを含む)
+<li>プリギャップ長の再現
 <li>ISRC/MCNの反映
 <li>プリエンファシス/DCPフラグの設定
 </ul>
 <li>(現時点で) <b>できないこと</b>
 <ul>
+<li>HTOAの完全な扱い</li>
+Appleのフレームワークの制限により、HTOAを持つディスクイメージの書き込みに失敗するドライブがあったり (松下は可、NEC/Pioneerは不可)、1秒を超えるHTOAが1秒に短縮されたりする問題があります。
 <li>Mixed Mode CDの作成
 <li>Enhanced CD (CD-Extra) の作成
 <li>CD-Textの書き込み

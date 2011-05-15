@@ -28,6 +28,12 @@ The XLD website has been moved from <a href=http://tmkk.hp.infoseek.co.jp/xld/in
 <div style="margin: 5px; color:red; font-family:sans-serif">Please <b>do not</b> post update info on the service like MacUpdate <b>before</b> I update the official website. The version which doesn't appear in the website is a development version. It may be unstable, and not well tested.
 </div>-->
 
+<p><strong>Version 20110515:</a></strong></p>
+<ul>
+<li>Fixed a bug that metadata from MusicBrainz was not obtained properly</li>
+<li>Open recent menu works</li>
+</ul>
+
 <p><strong>Version 20110508:</a></strong></p>
 <p>
 This is a <b>BETA</b> release for a CD burn feature. You can skip this update unless you are interested in the feature. Feedback is welcome.</p>
@@ -42,12 +48,14 @@ Here is a current status list of the XLD burner:</p>
 <ul>
 <li>write flac/ape/wv/etc+cue image to CD directly
 <li>take care of write offset
-<li>reproduce pregap length (including HTOA)
+<li>reproduce pregap length
 <li>write ISRC/MCN
 <li>write pre-emphasis/DCP flag
 </ul>
 <li>XLD <b>does not</b> (at this moment)
 <ul>
+<li>handle HTOA perfectly</li>
+Due to the limitation of Apple's framework, some drives fail to burn images including HTOA (MATSHITA will work, NEC/Pioneer will not). And HTOA longer than 1 second is truncated.
 <li>create Mixed Mode CD
 <li>create Enhanced CD (CD-Extra)
 <li>write CD-Text
