@@ -26,6 +26,15 @@ body {padding-left: 10px !important; padding-right: 10px !important; margin-left
 このダイアログからのアップデートに失敗する場合: 古いSparkleフレームワークを含む「行儀の悪い」アプリケーションフックプラグイン (例えばClickToFlash) はXLDのSparkleとコンフリクトします。無効にしてからアップデートしてください。
 </div>-->
 
+<p><strong>バージョン 20110703:</a></strong></p>
+<ul>
+<li>NFDなUTF-8文字列をcueシートのFILE行に書かないように修正</li>
+<li>ディスクIDが指定されていないREM DISCID行があるcueシートを読むとクラッシュする問題を修正</li>
+<li>FLACエンコーダにおいてカスタム窓関数の指定に対応</li>
+FLACのコマンドラインツールの-Aオプションのように窓関数を指定できます。複数指定する場合は';'で区切ってください。詳細は<a href=http://flac.sourceforge.net/api/group__flac__stream__encoder.html#ga24>ここ</a>を参照。
+<li>Monkey's Audioデコーダをバージョン4.11に更新</li>
+</ul>
+
 <p><strong>バージョン 20110611:</a></strong></p>
 <ul>
 <li>AIFFのタグの読み込みに部分的に対応</li>
