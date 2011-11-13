@@ -10,8 +10,8 @@
 						<sparkle:releaseNotesLink>
 							http://xld.googlecode.com/svn/appcast/releasenotes_e.html
 						</sparkle:releaseNotesLink>
-            <pubDate>Sun, 13 Nov 2011 21:00:00 +0900</pubDate>
-            <enclosure url="http://xld.googlecode.com/files/xld-gui-20111113.tar.bz2" sparkle:version="137.0" sparkle:shortVersionString="20111113" sparkle:dsaSignature="MCwCFGzKduCukn8Pp7uiJZZaGqQFr+5qAhQ3BpInUs66GSi4wDWjoFu5R1g7Cw==" length="8174290" type="application/octet-stream"/>
+            <pubDate>Sun, 13 Nov 2011 22:45:00 +0900</pubDate>
+            <enclosure url="http://xld.googlecode.com/files/xld-gui-20111113-1.tar.bz2" sparkle:version="137.1" sparkle:shortVersionString="20111113" sparkle:dsaSignature="MMCwCFHycwvIC8WLXsK5NA3iMMJEG2HssAhQQia9lpFoNMOULtHtfZzb8q3IvAw==" length="8174858" type="application/octet-stream"/>
          </item>
    </channel>
 </rss>
