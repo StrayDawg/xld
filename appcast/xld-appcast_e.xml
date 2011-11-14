@@ -11,7 +11,7 @@
 							http://xld.googlecode.com/svn/appcast/releasenotes_e.html
 						</sparkle:releaseNotesLink>
             <pubDate>Sun, 13 Nov 2011 22:45:00 +0900</pubDate>
-            <enclosure url="http://xld.googlecode.com/files/xld-gui-20111113-1.tar.bz2" sparkle:version="137.1" sparkle:shortVersionString="20111113" sparkle:dsaSignature="MC0CFQCJg7rf+vq1t+YWj6oMKfvYlXJ6fgIURAcj1V7dnjUa1UYlF6SstP55npo=" length="8174858" type="application/octet-stream"/>
+            <enclosure url="http://xld.googlecode.com/files/xld-gui-20111113.tar.bz2" sparkle:version="137.1" sparkle:shortVersionString="20111113" sparkle:dsaSignature="MC0CFQCJg7rf+vq1t+YWj6oMKfvYlXJ6fgIURAcj1V7dnjUa1UYlF6SstP55npo=" length="8174858" type="application/octet-stream"/>
          </item>
    </channel>
 </rss>
