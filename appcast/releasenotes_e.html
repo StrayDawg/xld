@@ -32,6 +32,19 @@ The XLD website has been moved from <a href=http://tmkk.pv.land.to/xld/index_e.h
 <div style="margin: 5px; color:red; font-family:sans-serif">Please <b>do not</b> post update info on the service like MacUpdate <b>before</b> I update the official website. The version which doesn't appear in the website is a development version. It may be unstable, and not well tested.
 </div>-->
 
+<p><strong>Version 20141109:</a></strong></p>
+<ul>
+<li>Supported DSD files</li>
+Now XLD can open DSD (.dsf/.dff) files and convert them to PCM format. Choose XLD menu -> DSD Importer Settings for configuration. See <a href=https://code.google.com/p/xld/issues/detail?id=243>here</a> for details.
+<li>Access to discogs now works again</li>
+It wasn't working because of API cahnges.
+<li>Fixed a problem that caused ripping failure on some external FireWire drives</li>
+<li>Fixed a problem when reading a cue sheet with very large index (a few hours)</li>
+<li>Fixed a CLI crashing on certain OS (Yosemite, etc)</li>
+<li>Improved MusicBrainz metadata processing</li>
+<li>File conversion now preserves Finder labels</li>
+</ul>
+
 <p><strong>Version 20140504:</a></strong></p>
 <ul>
 <li>AIFF/WAV/PCM output has now internal samplerate converter powered by libsoxr</li>
@@ -41,7 +54,7 @@ The XLD website has been moved from <a href=http://tmkk.pv.land.to/xld/index_e.h
 
 <p><strong>Version 20140427:</a></strong></p>
 <ul>
-<li>Binray distribution is now hosted at sourceforge.net; this is due to the end of googlecode download service.</li>
+<li>Binary distribution is now hosted at sourceforge.net; this is due to the end of googlecode download service.</li>
 <li>Improved pregap detection accuracy on Plextor drives</li>
 <li>Pre-emphasis/DCP flags are now also detected from subchannel, in addition to the TOC</li>
 <li>Improved stability against FLAC files with broken metadata</li>
