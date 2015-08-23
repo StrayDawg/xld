@@ -6,12 +6,12 @@
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
          <item>
-            <title>Version 20141129</title>
+            <title>Version 20141129a</title>
 						<sparkle:releaseNotesLink>
 							http://xld.googlecode.com/svn/appcast/releasenotes_e.html
 						</sparkle:releaseNotesLink>
-            <pubDate>Sat, 29 Nov 2014 23:45:00 +0900</pubDate>
-            <enclosure url="http://sourceforge.net/projects/xld/files/xld-20141129.dmg" sparkle:version="148.1" sparkle:shortVersionString="20141129" sparkle:dsaSignature="MCwCFBfjg09klDNu4rHpgW5jfkjhBieNAhQs3iDIGuEPPrZAN0LLiazL+hsG7Q==" length="7445451" type="application/octet-stream"/>
+            <pubDate>Sun, 23 Aug 2015 20:25:00 +0900</pubDate>
+            <enclosure url="http://sourceforge.net/projects/xld/files/xld-20141129a.dmg" sparkle:version="148.2" sparkle:shortVersionString="20141129a" sparkle:dsaSignature="MC0CFGX9b9thk4okAStZRJwzUU9ZPru6AhUAj1cFMm9o69zSMdwWgiIwdVHUEhY=" length="7445385" type="application/octet-stream"/>
          </item>
    </channel>
 </rss>
